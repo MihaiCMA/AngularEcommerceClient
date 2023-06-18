@@ -25,7 +25,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/open-iconic/font/css/open-iconic-bootstrap.css"
             ],
             "scripts": []
           },
@@ -94,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "497a4c44-0f8b-460f-8e40-3bd6a038a55a"
   }
 }
