@@ -1,0 +1,24 @@
+
+  <h2 class="text-center">Top Products of Today</h2>
+  <ng-container *ngIf="this.products=== null || this.products.length === 0">
+    <span>{{ productService.message }}</span>
+  </ng-container>
+  <div class="container" *ngIf="productService !== null && this.products.length > 0">
+    <div *ngFor="let product of this.products">
+      <div *ngIf="product.featured" class="featured-product">
+        <div>
+          <a [href]="'product/' + product.id">
+            <img [src]="product.imageUrl">
+          </a>
+        </div>
+        <h4>
+          <a [href]="'product/' + product.id">{{ product.title }}</a>
+        </h4>
+        <ng-container *ngIf="product.variants !== null && product.variants.length > 0">
+          <h5 class="price">
+            ${{ product.variants[0].price }}
+          </h5>
+        </ng-container>
+      </div>
+    </div>
+  </div>

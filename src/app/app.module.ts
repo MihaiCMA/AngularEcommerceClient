@@ -11,13 +11,23 @@ import { LocalStorageService } from 'ngx-webstorage';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ShopNavMenuComponent } from './components/shop-nav-menu/shop-nav-menu.component';
+import { HomeButtonComponent } from './components/home-button/home-button.component';
+import { CartCounterComponent } from './components/cart-counter/cart-counter.component';
+import { SearchComponent } from './components/search/search.component';
+import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserButtonComponent,
     LoginComponent,
-    ShopNavMenuComponent
+    ShopNavMenuComponent,
+    HomeButtonComponent,
+    CartCounterComponent,
+    SearchComponent,
+    FeaturedProductsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

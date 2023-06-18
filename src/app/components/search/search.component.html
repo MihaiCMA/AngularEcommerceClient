@@ -1,0 +1,17 @@
+<div class="input-group">
+    <input [(ngModel)]="searchText"
+           (input)="handleInputChange()"
+           type="search"
+           list="products"
+           class="form-control"
+           placeholder="Search..."
+           #searchInput />
+    <datalist id="products">
+      <option *ngFor="let suggestion of suggestions">{{ suggestion }}</option>
+    </datalist>
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="searchProducts()">
+        <span class="oi oi-magnifying-glass"></span>
+      </button>
+    </div>
+  </div>
