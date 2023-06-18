@@ -1,3 +1,18 @@
-<h1>{{ staticProduct?.title }}</h1>
-<app-user-button></app-user-button>
-<router-outlet></router-outlet>
+<div class="page">
+    <main>
+        <div class="top-row px-2">
+            <!-- <HomeButton/>
+            <Search/> -->
+            <app-user-button></app-user-button>
+            <!-- <CartCounter/> -->
+        </div>
+
+        <div class="nav-menu">
+            <app-shop-nav-menu></app-shop-nav-menu>
+        </div>
+
+        <article class="content px-2">
+            <router-outlet></router-outlet>
+        </article>
+    </main>
+</div>

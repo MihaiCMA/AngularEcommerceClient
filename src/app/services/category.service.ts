@@ -4,11 +4,13 @@ import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ServiceResponse } from '../model/serviceResponse';
 import { Category } from '../model/category';
+import { environment } from 'src/environments';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
+  private readonly baseUrl: string = `${environment.hostUrl}/api/category`;
   private categories: Category[] = [];
   private adminCategories: Category[] = [];
   private onChange: Subject<void> = new Subject<void>();
@@ -28,7 +30,7 @@ export class CategoryService {
   }
 
   addCategory(category: Category): Observable<void> {
-    return this.http.post<ServiceResponse<Category[]>>('api/Category/admin', category)
+    return this.http.post<ServiceResponse<Category[]>>(this.baseUrl+'/admin', category)
       .pipe(
         map(response => {
           this.adminCategories = response.data || []; // Provide an empty array as the default value if response.data is null
@@ -83,7 +85,7 @@ export class CategoryService {
   }
 
   getCategories(): Observable<void> {
-    return this.http.get<ServiceResponse<Category[]>>('api/Category')
+    return this.http.get<ServiceResponse<Category[]>>(this.baseUrl)
       .pipe(
         map(response => {
           if (response && response.data) {

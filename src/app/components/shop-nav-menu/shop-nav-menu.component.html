@@ -1,1 +1,22 @@
-<p>shop-nav-menu works!</p>
+<div class="top-row ps-3 navbar navbar-dark navbar-toggler-wrapper">
+    <div class="container-fluid">
+      <button title="Navigation menu" class="navbar-toggler" (click)="toggleNavMenu()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  
+  <div [ngClass]="navMenuCssClass" (click)="toggleNavMenu()">
+    <nav class="flex-nav">
+      <div class="nav-item px-2">
+        <a class="nav-link" href="" routerLinkActive="active" routerLink="/">
+          Home
+        </a>
+      </div>
+      <div class="nav-item px-2" *ngFor="let category of categories">
+        <a class="nav-link" [routerLink]="category.url" routerLinkActive="active">
+          {{ category.name }}
+        </a>
+      </div>
+    </nav>
+  </div>
