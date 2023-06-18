@@ -1,0 +1,19 @@
+<h3>Login</h3>
+
+<form (ngSubmit)="handleLogin()" #loginForm="ngForm">
+  <div class="mb-3">
+    <label for="email">Email</label>
+    <input id="email" [(ngModel)]="user.email" name="email" class="form-control" required />
+    <div *ngIf="loginForm.controls['email'].errors?.['required']" class="text-danger">Email is required</div>
+  </div>
+  <div class="mb-3">
+    <label for="password">Password</label>
+    <input id="password" [(ngModel)]="user.password" name="password" class="form-control" type="password" required />
+    <div *ngIf="loginForm.controls['password'].errors?.['required']" class="text-danger">Password is required</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<div class="text-danger">
+  <span>{{ errorMessage }}</span>
+</div>

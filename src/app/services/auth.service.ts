@@ -6,12 +6,13 @@ import { ServiceResponse } from '../model/serviceResponse';
 import { UserChangePassword } from '../model/userChangePassword';;
 import { UserLogin } from '../model/userLogin';;
 import { UserRegister } from '../model/userRegister';
+import { environment } from 'src/environments';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly baseUrl: string = '/api/auth';
+  private readonly baseUrl: string = `${environment.hostUrl}/api/auth`;
 
   constructor(private http: HttpClient) {}
 

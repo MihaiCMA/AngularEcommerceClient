@@ -1,8 +1,8 @@
-<div class="dropdown" [ngClass]="{ 'show-menu': showUserMenu }">
+<div class="dropdown">
     <button (click)="toggleUserMenu()" (focusout)="hideUserMenu()" class="btn btn-secondary dropdown-toggle user-button">
       <i class="oi oi-person"></i>
     </button>
-    <div class="dropdown-menu dropdown-menu-right">
+    <div class="dropdown-menu dropdown-menu-right"  [ngClass]="{ 'show-menu': showUserMenu }">
       <ng-container *ngIf="isLoggedIn; else unauthorizedMenu">
         <a href="profile" class="dropdown-item">Profile</a>
         <a href="orders" class="dropdown-item">Orders</a>
